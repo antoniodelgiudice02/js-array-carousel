@@ -35,7 +35,7 @@ upArrow.addEventListener('click', function () {
 
     // visualizzo l'immagine successiva
 
-    if (i >= 0) {
+    if (i >= 0) { 
 
         image.innerHTML = (`<img id="image" ${cerca} alt="image">`);
 
