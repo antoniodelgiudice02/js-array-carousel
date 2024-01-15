@@ -1,7 +1,7 @@
 // ELEMENTI
 const image = document.getElementById('image')
 const upArrow = document.getElementById('up-arrow')
-const downArrow = document.getElementById('down-button')
+const downArrow = document.getElementById('down-arrow')
 
 // al caricamento della pagina generare la lista di slides rendendo visibile solo la prima
 
@@ -18,25 +18,53 @@ console.log(slides[0])
 image.innerHTML = ('<img id="image" src="./img/01.webp" alt="image">')
 console.log(image.innerHTML)
 
+let i = 0; 
+console.log(i)
 
 // al click della freccia in alto
 
 upArrow.addEventListener('click', function () {
 
-    // visualizzare l'immagine succesiva in base all'ordine dell'array
+    // incremento l'indice
 
-    for (let i = 0; i <= slides.length - 1; i++) {
-        console.log([i])
+    i++;
+    console.log(i)
 
-        const cerca =  (`src="./img/${slides[i]}"`)
+    const cerca = (`src="./img/${slides[i]}"`)
+    console.log(slides[i])
 
-        console.log(cerca)
-        console.log(slides[i])
+    // visualizzo l'immagine successiva
 
-        image.innerHTML = (`<img id="image" ${cerca} alt="image">`)
-        
+    if (i >= 0) {
 
+        image.innerHTML = (`<img id="image" ${cerca} alt="image">`);
 
+    } else {
+        image.innerHTML = ``
+    }
+
+})
+
+// al click della freccia in basso
+
+downArrow.addEventListener('click', function () {
+
+    // decremento l'indice
+
+    i--;
+    console.log(i)
+
+    const cerca = (`src="./img/${slides[i]}"`)
+    console.log(slides[i])
+
+    // visualizzo l'immagine precedente
+
+    if (i >= 0) {
+
+        image.innerHTML = (`<img id="image" ${cerca} alt="image">`);
+
+    } else {
+        image.innerHTML = ``
     }
 
 })
