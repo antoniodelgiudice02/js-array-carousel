@@ -13,12 +13,14 @@ const slides = [
     '05.webp',
 ];
 
+
 console.log(slides[0])
 
 image.innerHTML = ('<img id="image" src="./img/01.webp" alt="image">')
+downArrow.classList.add('d-none')
 console.log(image.innerHTML)
 
-let i = 0; 
+let i = 0 ; 
 console.log(i)
 
 // al click della freccia in alto
@@ -30,19 +32,23 @@ upArrow.addEventListener('click', function () {
     i++;
     console.log(i)
 
-    const cerca = (`src="./img/${slides[i]}"`)
+    const cerca = (`${slides[i]}`)
+
     console.log(slides[i])
 
-    // visualizzo l'immagine successiva
+    if (i < slides.length) { 
 
-    if (i >= 0) { 
+        image.innerHTML = (`<img id="image" src="./img/${cerca}" alt="image">`);
 
-        image.innerHTML = (`<img id="image" ${cerca} alt="image">`);
+        downArrow.classList.remove('d-none')
 
-    } else {
-        image.innerHTML = ``
+    } 
+
+    if (i == slides.length - 1){
+
+        upArrow.classList.add('d-none')
+
     }
-
 })
 
 // al click della freccia in basso
@@ -54,17 +60,29 @@ downArrow.addEventListener('click', function () {
     i--;
     console.log(i)
 
-    const cerca = (`src="./img/${slides[i]}"`)
+    const cerca = (`${slides[i]}`)
+
+
     console.log(slides[i])
 
     // visualizzo l'immagine precedente
 
-    if (i >= 0) {
+    if (i >= 0 ) {
 
-        image.innerHTML = (`<img id="image" ${cerca} alt="image">`);
+        image.innerHTML = (`<img id="image" src="./img/${cerca}" alt="image">`);
 
-    } else {
-        image.innerHTML = ``
+    } 
+
+    if(i < slides.length){
+
+        upArrow.classList.remove('d-none')
+
+    }
+
+    if(i == 0){
+
+        downArrow.classList.add('d-none')
+
     }
 
 })
