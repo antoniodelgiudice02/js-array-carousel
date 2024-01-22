@@ -36,7 +36,7 @@
 /* SCROLL */
 
 #scroll{
-    overflow: auto;
+    overflow: scroll;
 
     width: 25%;
     height: 100%;
@@ -51,17 +51,18 @@
     gap: 10px;
 }
 
+
 #scroll div{
     width: 80%;
-    height: 100%;
-    aspect-ratio: 16/9;
-    
+    height: calc(100% / 5);
+    margin: 10px 0;
+    overflow: hidden;
 }
 
 #scroll img{
     width: 100%;
-    height: calc(546px / 5);
     object-fit: cover;
+    object-position: 50% 100%;
 }
 
 .selection{
