@@ -7,7 +7,7 @@ function clickArrow() {
         i++;
         console.log(i)
 
-        const cerca = (`${slides[i]}`)
+        cerca = (`${slides[i]}`)
 
         console.log(slides[i])
 
@@ -37,7 +37,7 @@ function clickArrow() {
         i--;
         console.log(i)
 
-        const cerca = (`${slides[i]}`)
+        cerca = (`${slides[i]}`)
 
 
         console.log(slides[i])
@@ -64,4 +64,21 @@ function clickArrow() {
 
     })
 
+}
+
+function slidesTimer() {
+    time = setInterval(function () {
+
+        i++
+        console.log(i)
+        cerca = (`${slides[i]}`)
+        image.innerHTML = (`<img id="image" src="./img/${cerca}" alt="image">`);
+        if (i == slides.length) {
+            i = 0
+            image.innerHTML = ('<img id="image" src="./img/01.webp" alt="image">')
+            console.log(i)
+        }
+
+
+    }, 1000)
 }

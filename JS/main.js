@@ -17,12 +17,29 @@ image.innerHTML = ('<img id="image" src="./img/01.webp" alt="image">')
 //thumbs.classList.remove('border')
 
 let i = 0;
+let cerca = slides[i]
+let time = ''
 
 
 
 // al click delle frecce
 
 clickArrow();
+slidesTimer()
+
+image.addEventListener('mouseover', function () {
+    clearInterval(time)
+})
+
+
+
+
+
+//for(i = 0; i <= slides.length; i++){
+
+
+
+
 
 
 
